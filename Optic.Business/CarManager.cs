@@ -12,7 +12,7 @@ namespace Optic.Business
     {
         CarDataAccess carDataAccess = new CarDataAccess();
         public string GetCarTypeNameByCarId(int carId)
-        {
+        { 
             return carDataAccess.GetCarTypeNameByCarId(carId);
         }
 
