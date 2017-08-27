@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Optic.DataAccess.CarData
 {
     public class CarDataAccess
-    {
+    {  
         public string GetCarTypeNameByCarId(int carId)
         {
             using (var unitOfWork = new UnitOfWork())
