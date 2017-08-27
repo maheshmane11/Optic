@@ -17,7 +17,7 @@ namespace Optic.Business
         }
 
         public void CreateCar(CarDTO carDto)
-        {
+        {   
             carDataAccess.CreateNewCar(carDto);
         }
     }
