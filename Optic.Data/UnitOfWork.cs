@@ -9,9 +9,13 @@ namespace Optic.Data
 {
     public class UnitOfWork : IDisposable
     {
+        #region PrivateVariables
         private readonly Context context;
         private bool disposed;
         private Dictionary<string, object> repositories;
+        #endregion
+
+        #region UnitOfWorkMethods
 
         public UnitOfWork(Context context)
         {
@@ -66,6 +70,8 @@ namespace Optic.Data
             }
             return (Repository<T>)repositories[type];
         }
+
+        #endregion
 
         #region Repositories
         public Repository<Car> carRepository { get
