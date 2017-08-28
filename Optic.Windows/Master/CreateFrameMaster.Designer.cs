@@ -28,19 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblFrameMasterHeading = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtFrameName = new System.Windows.Forms.TextBox();
+            this.txtFramePurchaseRate = new System.Windows.Forms.TextBox();
+            this.txtSellRate = new System.Windows.Forms.TextBox();
+            this.txtOpBal = new System.Windows.Forms.TextBox();
+            this.btnFrameSave = new System.Windows.Forms.Button();
+            this.btnFrameCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // lblFrameMasterHeading
+            // 
+            this.lblFrameMasterHeading.AutoSize = true;
+            this.lblFrameMasterHeading.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrameMasterHeading.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblFrameMasterHeading.Location = new System.Drawing.Point(45, 35);
+            this.lblFrameMasterHeading.Name = "lblFrameMasterHeading";
+            this.lblFrameMasterHeading.Size = new System.Drawing.Size(198, 29);
+            this.lblFrameMasterHeading.TabIndex = 0;
+            this.lblFrameMasterHeading.Text = "Create New Frame";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(47, 82);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Purchase Rate";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(47, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Sell Rate";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(47, 191);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Op Bal.";
+            // 
+            // txtFrameName
+            // 
+            this.txtFrameName.Location = new System.Drawing.Point(143, 82);
+            this.txtFrameName.Name = "txtFrameName";
+            this.txtFrameName.Size = new System.Drawing.Size(255, 20);
+            this.txtFrameName.TabIndex = 5;
+            // 
+            // txtFramePurchaseRate
+            // 
+            this.txtFramePurchaseRate.Location = new System.Drawing.Point(143, 123);
+            this.txtFramePurchaseRate.Name = "txtFramePurchaseRate";
+            this.txtFramePurchaseRate.Size = new System.Drawing.Size(100, 20);
+            this.txtFramePurchaseRate.TabIndex = 6;
+            // 
+            // txtSellRate
+            // 
+            this.txtSellRate.Location = new System.Drawing.Point(143, 153);
+            this.txtSellRate.Name = "txtSellRate";
+            this.txtSellRate.Size = new System.Drawing.Size(100, 20);
+            this.txtSellRate.TabIndex = 7;
+            // 
+            // txtOpBal
+            // 
+            this.txtOpBal.Location = new System.Drawing.Point(143, 188);
+            this.txtOpBal.Name = "txtOpBal";
+            this.txtOpBal.Size = new System.Drawing.Size(100, 20);
+            this.txtOpBal.TabIndex = 8;
+            // 
+            // btnFrameSave
+            // 
+            this.btnFrameSave.Location = new System.Drawing.Point(143, 227);
+            this.btnFrameSave.Name = "btnFrameSave";
+            this.btnFrameSave.Size = new System.Drawing.Size(100, 23);
+            this.btnFrameSave.TabIndex = 9;
+            this.btnFrameSave.Text = "Save";
+            this.btnFrameSave.UseVisualStyleBackColor = true;
+            // 
+            // btnFrameCancel
+            // 
+            this.btnFrameCancel.Location = new System.Drawing.Point(261, 227);
+            this.btnFrameCancel.Name = "btnFrameCancel";
+            this.btnFrameCancel.Size = new System.Drawing.Size(105, 23);
+            this.btnFrameCancel.TabIndex = 10;
+            this.btnFrameCancel.Text = "Cancel";
+            this.btnFrameCancel.UseVisualStyleBackColor = true;
             // 
             // CreateFrameMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 257);
+            this.ClientSize = new System.Drawing.Size(523, 302);
+            this.Controls.Add(this.btnFrameCancel);
+            this.Controls.Add(this.btnFrameSave);
+            this.Controls.Add(this.txtOpBal);
+            this.Controls.Add(this.txtSellRate);
+            this.Controls.Add(this.txtFramePurchaseRate);
+            this.Controls.Add(this.txtFrameName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblFrameMasterHeading);
             this.Name = "CreateFrameMaster";
             this.Text = "New Frame";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblFrameMasterHeading;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtFrameName;
+        private System.Windows.Forms.TextBox txtFramePurchaseRate;
+        private System.Windows.Forms.TextBox txtSellRate;
+        private System.Windows.Forms.TextBox txtOpBal;
+        private System.Windows.Forms.Button btnFrameSave;
+        private System.Windows.Forms.Button btnFrameCancel;
     }
 }

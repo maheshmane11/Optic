@@ -29,49 +29,49 @@ namespace Optic.Windows
         private void lenseGlassMasterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = new CreateLensMaster();
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void menuFrameMaster_Click(object sender, EventArgs e)
         {
             var form = new CreateFrameMaster();
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void menuContactLensMaster_Click(object sender, EventArgs e)
         {
             var form = new CreateContactLensMaster();
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void menuAccessoryMaster_Click(object sender, EventArgs e)
         {
             var form = new CreateAccessoryMaster();
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void menuSunGlasses_Click(object sender, EventArgs e)
         {
             var form = new CreateSunGlassesMaster();
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void menuVendorMaster_Click(object sender, EventArgs e)
         {
             var form = new CreateVendorMaster();
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void menuExpanseMaster_Click(object sender, EventArgs e)
         {
             var form = new CreateExpanseMaster();
-            form.Show(this);
+            form.ShowDialog(this);
         }
 
         private void menuPrintBarcode_Click(object sender, EventArgs e)
         {
             var form = new CreatePrintBarcode();
-            form.Show(this);
+            form.ShowDialog(this);
         }
     }
 }

@@ -15,6 +15,6 @@ namespace Optic.Windows.Master
         public CreateFrameMaster()
         {
             InitializeComponent();
-        }
+        }       
     }
 }
