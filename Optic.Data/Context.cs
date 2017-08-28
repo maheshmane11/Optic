@@ -37,6 +37,10 @@ namespace Optic.Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<Person> Persons { get; set; }
 
+        public DbSet<MasterType> MasterType { get; set; }
+        public DbSet<OpticMaster> OpticMasters { get; set; }
+        public DbSet<VendorMaster> VendorMasters { get; set; }
+
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
         //    modelBuilder.Entity<Person>()

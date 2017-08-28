@@ -99,6 +99,41 @@ namespace Optic.Data
                 personRepository = value;
             }
         }
+
+        public Repository<MasterType> masterTypeRepository
+        {
+            get
+            {
+                return new Repository<MasterType>(context);
+            }
+            set
+            {
+                masterTypeRepository = value;
+            }
+        }
+        public Repository<OpticMaster> opticMasterRepository
+        {
+            get
+            {
+                return new Repository<OpticMaster>(context);
+            }
+            set
+            {
+                opticMasterRepository = value;
+            }
+        }
+        public Repository<VendorMaster> vendorMasterRepository
+        {
+            get
+            {
+                return new Repository<VendorMaster>(context);
+            }
+            set
+            {
+                vendorMasterRepository = value;
+            }
+        }
+
         #endregion
     }
 }
