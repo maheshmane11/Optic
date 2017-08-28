@@ -162,6 +162,10 @@
       <Project>{420d4f88-c498-4eb6-b738-4e2120bbaf77}</Project>
       <Name>Optic.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Optic.Common\Optic.Common.csproj">
+      <Project>{ec229285-c640-4cbf-9317-1cb375729ad0}</Project>
+      <Name>Optic.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Optic.DataAccess\Optic.DataAccess.csproj">
       <Project>{b727d4d0-b248-459c-8016-e55aab8a379a}</Project>
       <Name>Optic.DataAccess</Name>

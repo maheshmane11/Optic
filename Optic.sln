@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optic.Business", "Optic.Bus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optic.Windows", "Optic.Windows\Optic.Windows.csproj", "{C79896EB-6CF5-45FB-BB73-A22925F2CD81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optic.Common", "Optic.Common\Optic.Common.csproj", "{EC229285-C640-4CBF-9317-1CB375729AD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +84,18 @@ Global
 		{C79896EB-6CF5-45FB-BB73-A22925F2CD81}.Release|x64.Build.0 = Release|Any CPU
 		{C79896EB-6CF5-45FB-BB73-A22925F2CD81}.Release|x86.ActiveCfg = Release|Any CPU
 		{C79896EB-6CF5-45FB-BB73-A22925F2CD81}.Release|x86.Build.0 = Release|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Debug|x64.Build.0 = Debug|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Debug|x86.Build.0 = Debug|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Release|x64.ActiveCfg = Release|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Release|x64.Build.0 = Release|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Release|x86.ActiveCfg = Release|Any CPU
+		{EC229285-C640-4CBF-9317-1CB375729AD0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
