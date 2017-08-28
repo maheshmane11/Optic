@@ -33,12 +33,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtFrameName = new System.Windows.Forms.TextBox();
-            this.txtFramePurchaseRate = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPurchaseRate = new System.Windows.Forms.TextBox();
             this.txtSellRate = new System.Windows.Forms.TextBox();
             this.txtOpBal = new System.Windows.Forms.TextBox();
-            this.btnFrameSave = new System.Windows.Forms.Button();
-            this.btnFrameCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFrameMasterHeading
@@ -88,19 +88,19 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Op Bal.";
             // 
-            // txtFrameName
+            // txtName
             // 
-            this.txtFrameName.Location = new System.Drawing.Point(143, 82);
-            this.txtFrameName.Name = "txtFrameName";
-            this.txtFrameName.Size = new System.Drawing.Size(255, 20);
-            this.txtFrameName.TabIndex = 5;
+            this.txtName.Location = new System.Drawing.Point(143, 82);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(255, 20);
+            this.txtName.TabIndex = 5;
             // 
-            // txtFramePurchaseRate
+            // txtPurchaseRate
             // 
-            this.txtFramePurchaseRate.Location = new System.Drawing.Point(143, 123);
-            this.txtFramePurchaseRate.Name = "txtFramePurchaseRate";
-            this.txtFramePurchaseRate.Size = new System.Drawing.Size(100, 20);
-            this.txtFramePurchaseRate.TabIndex = 6;
+            this.txtPurchaseRate.Location = new System.Drawing.Point(143, 123);
+            this.txtPurchaseRate.Name = "txtPurchaseRate";
+            this.txtPurchaseRate.Size = new System.Drawing.Size(100, 20);
+            this.txtPurchaseRate.TabIndex = 6;
             // 
             // txtSellRate
             // 
@@ -116,35 +116,35 @@
             this.txtOpBal.Size = new System.Drawing.Size(100, 20);
             this.txtOpBal.TabIndex = 8;
             // 
-            // btnFrameSave
+            // btnSave
             // 
-            this.btnFrameSave.Location = new System.Drawing.Point(143, 227);
-            this.btnFrameSave.Name = "btnFrameSave";
-            this.btnFrameSave.Size = new System.Drawing.Size(100, 23);
-            this.btnFrameSave.TabIndex = 9;
-            this.btnFrameSave.Text = "Save";
-            this.btnFrameSave.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(143, 227);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 23);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // btnFrameCancel
+            // btnCancel
             // 
-            this.btnFrameCancel.Location = new System.Drawing.Point(261, 227);
-            this.btnFrameCancel.Name = "btnFrameCancel";
-            this.btnFrameCancel.Size = new System.Drawing.Size(105, 23);
-            this.btnFrameCancel.TabIndex = 10;
-            this.btnFrameCancel.Text = "Cancel";
-            this.btnFrameCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(261, 227);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(105, 23);
+            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // CreateFrameMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 302);
-            this.Controls.Add(this.btnFrameCancel);
-            this.Controls.Add(this.btnFrameSave);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtOpBal);
             this.Controls.Add(this.txtSellRate);
-            this.Controls.Add(this.txtFramePurchaseRate);
-            this.Controls.Add(this.txtFrameName);
+            this.Controls.Add(this.txtPurchaseRate);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -164,11 +164,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFrameName;
-        private System.Windows.Forms.TextBox txtFramePurchaseRate;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtPurchaseRate;
         private System.Windows.Forms.TextBox txtSellRate;
         private System.Windows.Forms.TextBox txtOpBal;
-        private System.Windows.Forms.Button btnFrameSave;
-        private System.Windows.Forms.Button btnFrameCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
