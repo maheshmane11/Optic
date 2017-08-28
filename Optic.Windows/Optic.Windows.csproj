@@ -52,16 +52,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Master\CreateAccessoryMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreateAccessoryMaster.Designer.cs">
+      <DependentUpon>CreateAccessoryMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CreateContactLensMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreateContactLensMaster.Designer.cs">
+      <DependentUpon>CreateContactLensMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CreateExpanseMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreateExpanseMaster.Designer.cs">
+      <DependentUpon>CreateExpanseMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CreateFrameMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreateFrameMaster.Designer.cs">
+      <DependentUpon>CreateFrameMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\CreateLensMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreateLensMaster.Designer.cs">
+      <DependentUpon>CreateLensMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CreatePrintBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreatePrintBarcode.Designer.cs">
+      <DependentUpon>CreatePrintBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CreateSunGlassesMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreateSunGlassesMaster.Designer.cs">
+      <DependentUpon>CreateSunGlassesMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\CreateVendorMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\CreateVendorMaster.Designer.cs">
+      <DependentUpon>CreateVendorMaster.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Master\CreateAccessoryMaster.resx">
+      <DependentUpon>CreateAccessoryMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CreateContactLensMaster.resx">
+      <DependentUpon>CreateContactLensMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CreateExpanseMaster.resx">
+      <DependentUpon>CreateExpanseMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CreateFrameMaster.resx">
+      <DependentUpon>CreateFrameMaster.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CreateLensMaster.resx">
+      <DependentUpon>CreateLensMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CreatePrintBarcode.resx">
+      <DependentUpon>CreatePrintBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CreateSunGlassesMaster.resx">
+      <DependentUpon>CreateSunGlassesMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\CreateVendorMaster.resx">
+      <DependentUpon>CreateVendorMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

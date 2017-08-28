@@ -103,6 +103,7 @@
             this.menuFrameMaster.Name = "menuFrameMaster";
             this.menuFrameMaster.Size = new System.Drawing.Size(182, 22);
             this.menuFrameMaster.Text = "Frame Master";
+            this.menuFrameMaster.Click += new System.EventHandler(this.menuFrameMaster_Click);
             // 
             // menuLensMaster
             // 
@@ -116,36 +117,42 @@
             this.menuContactLensMaster.Name = "menuContactLensMaster";
             this.menuContactLensMaster.Size = new System.Drawing.Size(182, 22);
             this.menuContactLensMaster.Text = "Contact Lens Master";
+            this.menuContactLensMaster.Click += new System.EventHandler(this.menuContactLensMaster_Click);
             // 
             // menuAccessoryMaster
             // 
             this.menuAccessoryMaster.Name = "menuAccessoryMaster";
             this.menuAccessoryMaster.Size = new System.Drawing.Size(182, 22);
             this.menuAccessoryMaster.Text = "Accessory Master";
+            this.menuAccessoryMaster.Click += new System.EventHandler(this.menuAccessoryMaster_Click);
             // 
             // menuSunGlasses
             // 
             this.menuSunGlasses.Name = "menuSunGlasses";
             this.menuSunGlasses.Size = new System.Drawing.Size(182, 22);
             this.menuSunGlasses.Text = "Sun Glasses";
+            this.menuSunGlasses.Click += new System.EventHandler(this.menuSunGlasses_Click);
             // 
             // menuVendorMaster
             // 
             this.menuVendorMaster.Name = "menuVendorMaster";
             this.menuVendorMaster.Size = new System.Drawing.Size(182, 22);
             this.menuVendorMaster.Text = "Vendor Master";
+            this.menuVendorMaster.Click += new System.EventHandler(this.menuVendorMaster_Click);
             // 
             // menuExpanseMaster
             // 
             this.menuExpanseMaster.Name = "menuExpanseMaster";
             this.menuExpanseMaster.Size = new System.Drawing.Size(182, 22);
             this.menuExpanseMaster.Text = "Expanse Master";
+            this.menuExpanseMaster.Click += new System.EventHandler(this.menuExpanseMaster_Click);
             // 
             // menuPrintBarcode
             // 
             this.menuPrintBarcode.Name = "menuPrintBarcode";
             this.menuPrintBarcode.Size = new System.Drawing.Size(182, 22);
             this.menuPrintBarcode.Text = "Print Barcode";
+            this.menuPrintBarcode.Click += new System.EventHandler(this.menuPrintBarcode_Click);
             // 
             // MainForm
             // 
