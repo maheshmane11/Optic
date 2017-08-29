@@ -1,0 +1,51 @@
+﻿using Optic.Data;
+using Optic.Data.Models;
+using Optic.DataAccess.DTOs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Optic.DataAccess.Masters
+{
+    public class OpticMasterDataAccess
+    {
+        public void AddUpdateOpticMaster(OpticMasterDTO opticMasterDto)
+        {
+            if (opticMasterDto.OpticMasterID > 0)
+            {
+                using (var uoW = new UnitOfWork())
+                {
+                    var model = uoW.opticMasterRepository.GetById(opticMasterDto.OpticMasterID);
+                    model.MasterName = opticMasterDto.MasterName;
+                    model.MasterTypeID = opticMasterDto.MasterTypeID;
+                    model.PurchaseRate = opticMasterDto.PurchaseRate;
+                    model.SellRate = opticMasterDto.SellRate;
+                    model.OpBal = opticMasterDto.OpBal;
+                    model.IsDeleted = opticMasterDto.IsDeleted;
+                    model.ModifiedBy = opticMasterDto.ModifiedBy;
+                    model.ModifiedDate = opticMasterDto.ModifiedDate;
+                    uoW.Save();
+                }
+            }
+            else
+            {
+                OpticMasters model = new OpticMasters();
+                model.MasterName = opticMasterDto.MasterName;
+                model.MasterTypeID = opticMasterDto.MasterTypeID;
+                model.PurchaseRate = opticMasterDto.PurchaseRate;
+                model.SellRate = opticMasterDto.SellRate;
+                model.OpBal = opticMasterDto.OpBal;
+                model.IsDeleted = opticMasterDto.IsDeleted;
+                model.CreatedBy = opticMasterDto.CreatedBy;
+                model.CreatedDate = opticMasterDto.CreatedDate;
+                using (var uoW = new UnitOfWork())
+                {
+                    uoW.opticMasterRepository.Insert(model);                   
+                }
+
+            }
+        }
+    }
+}

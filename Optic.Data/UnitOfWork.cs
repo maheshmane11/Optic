@@ -117,11 +117,11 @@ namespace Optic.Data
                 masterTypeRepository = value;
             }
         }
-        public Repository<OpticMaster> opticMasterRepository
+        public Repository<OpticMasters> opticMasterRepository
         {
             get
             {
-                return new Repository<OpticMaster>(context);
+                return new Repository<OpticMasters>(context);
             }
             set
             {

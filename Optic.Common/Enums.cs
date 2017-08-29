@@ -8,5 +8,19 @@ namespace Optic.Common
 {
    public class Enums
     {
+      public enum MasterTypeEnum
+        {
+            FrameMaster=1,
+            LensMaster=2,
+            ContactLensMaster=3,
+            AccessoryMaster = 4,
+            SunGlassesMaster =5            
+        };
+
+        public enum IsDeletedEnum
+        {
+            True = -1,
+            False = 0
+        };
     }
 }

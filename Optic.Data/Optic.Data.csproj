@@ -68,7 +68,7 @@
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\CarType.cs" />
     <Compile Include="Models\MasterType.cs" />
-    <Compile Include="Models\OpticMaster.cs" />
+    <Compile Include="Models\OpticMasters.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\VendorMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
