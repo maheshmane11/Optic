@@ -16,7 +16,7 @@ namespace Optic.Data.Models
         public double? PurchaseRate { get; set; }
         public double? SellRate { get; set; }
         public double? OpBal { get; set; }
-        public int IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? ModifiedDate { get; set; }

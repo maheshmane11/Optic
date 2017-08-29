@@ -49,11 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarData\CarDataAccess.cs" />
-    <Compile Include="DTOs\CarDTO.cs" />
-    <Compile Include="DTOs\CarTypeDTO.cs" />
     <Compile Include="DTOs\OpticMasterDTO.cs" />
-    <Compile Include="DTOs\PersonDTO.cs" />
     <Compile Include="Masters\OpticMasterDataAccess.cs" />
     <Compile Include="OnFormLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

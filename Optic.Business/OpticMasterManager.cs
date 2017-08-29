@@ -8,22 +8,35 @@ using System.Threading.Tasks;
 
 namespace Optic.Business
 {
-  public class OpticMasterManager
+    public class OpticMasterManager
     {
         OpticMasterDataAccess opticMasterDataAccess = new OpticMasterDataAccess();
-        public void AddUpdateOpticMaster(OpticMasterDTO opticMasterDto)
+        public bool AddUpdateOpticMaster(OpticMasterDTO opticMasterDto)
         {
-            if (opticMasterDto.OpticMasterID > 0)
+            try
             {
-                opticMasterDto.ModifiedBy = 1;
-                opticMasterDto.ModifiedDate = DateTime.Now;
+                if (opticMasterDto.OpticMasterID > 0)
+                {
+                    opticMasterDto.ModifiedBy = 1;
+                    opticMasterDto.ModifiedDate = DateTime.Now;
+                }
+                else
+                {
+                    opticMasterDto.CreatedBy = 1;
+                    opticMasterDto.CreatedDate = DateTime.Now;
+                }
+               return opticMasterDataAccess.AddUpdateOpticMaster(opticMasterDto);
+               
             }
-            else
+            catch(Exception ex)
             {
-                opticMasterDto.CreatedBy = 1;
-                opticMasterDto.CreatedDate = DateTime.Now;
+                return false;
             }
-            opticMasterDataAccess.AddUpdateOpticMaster(opticMasterDto);
+        }
+
+        public bool CheckMasterExists(string name, int masterTypeId)
+        {
+            return opticMasterDataAccess.CheckMasterExists(name, masterTypeId);
         }
     }
 }

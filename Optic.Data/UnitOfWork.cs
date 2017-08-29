@@ -74,38 +74,7 @@ namespace Optic.Data
         #endregion
 
         #region Repositories
-        public Repository<Car> carRepository { get
-            {
-                return new Repository<Car>(context);
-            }
-            set
-            {
-                carRepository = value;
-            }
-        }
-        public Repository<CarType> carTypesRepository
-        {
-            get
-            {
-                return new Repository<CarType>(context);
-            }
-            set
-            {
-                carTypesRepository = value;
-            }
-        }
-        public Repository<Person> personRepository
-        {
-            get
-            {
-                return new Repository<Person>(context);
-            }
-            set
-            {
-                personRepository = value;
-            }
-        }
-
+       
         public Repository<MasterType> masterTypeRepository
         {
             get
@@ -117,6 +86,7 @@ namespace Optic.Data
                 masterTypeRepository = value;
             }
         }
+
         public Repository<OpticMasters> opticMasterRepository
         {
             get
@@ -128,6 +98,7 @@ namespace Optic.Data
                 opticMasterRepository = value;
             }
         }
+
         public Repository<VendorMaster> vendorMasterRepository
         {
             get

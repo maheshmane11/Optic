@@ -13,7 +13,12 @@ namespace Optic.Data
     {
         public Context() : base("DefaultConnection")
         { }
-        public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
+        public IDbSet<TEntity> SetNew<TEntity>() where TEntity : class
+        {
+            return base.Set<TEntity>();
+        }
+
+        public override DbSet<TEntity> Set<TEntity>()
         {
             return base.Set<TEntity>();
         }
@@ -31,11 +36,7 @@ namespace Optic.Data
             }
             base.OnModelCreating(modelBuilder);
         }
-
-
-        public DbSet<CarType> CarTypes { get; set; }
-        public DbSet<Car> Cars { get; set; }
-        public DbSet<Person> Persons { get; set; }
+        
 
         public DbSet<MasterType> MasterType { get; set; }
         public DbSet<OpticMasters> OpticMasters { get; set; }

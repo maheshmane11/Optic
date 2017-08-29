@@ -21,6 +21,18 @@ namespace Optic.Windows
             InitializeComponent();
         }
 
+        public string StatusLabelText
+        {
+            get
+            {
+                return this.lblMainFormStatus.Text;
+            }
+            set
+            {
+                this.lblMainFormStatus.Text = value;
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             OnFormLoadManager.SetEFInitializer();
@@ -28,50 +40,52 @@ namespace Optic.Windows
 
         private void lenseGlassMasterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = new CreateLensMaster();
-            form.ShowDialog(this);
+            var form = new CreateLensMaster(this);
+            form.ShowDialog();
         }
 
         private void menuFrameMaster_Click(object sender, EventArgs e)
         {
-            var form = new CreateFrameMaster();
-            form.ShowDialog(this);
+            var form = new CreateFrameMaster(this);
+            form.ShowDialog();
         }
 
         private void menuContactLensMaster_Click(object sender, EventArgs e)
         {
-            var form = new CreateContactLensMaster();
-            form.ShowDialog(this);
+            var form = new CreateContactLensMaster(this);
+            form.ShowDialog();
         }
 
         private void menuAccessoryMaster_Click(object sender, EventArgs e)
         {
-            var form = new CreateAccessoryMaster();
-            form.ShowDialog(this);
+            var form = new CreateAccessoryMaster(this);
+            form.ShowDialog();
         }
 
         private void menuSunGlasses_Click(object sender, EventArgs e)
         {
-            var form = new CreateSunGlassesMaster();
-            form.ShowDialog(this);
+            var form = new CreateSunGlassesMaster(this);
+            form.ShowDialog();
         }
 
         private void menuVendorMaster_Click(object sender, EventArgs e)
         {
-            var form = new CreateVendorMaster();
-            form.ShowDialog(this);
+            var form = new CreateVendorMaster(this);
+            form.ShowDialog();
         }
 
         private void menuExpanseMaster_Click(object sender, EventArgs e)
         {
-            var form = new CreateExpanseMaster();
-            form.ShowDialog(this);
+            var form = new CreateExpanseMaster(this);
+            form.ShowDialog();
         }
 
         private void menuPrintBarcode_Click(object sender, EventArgs e)
         {
-            var form = new CreatePrintBarcode();
-            form.ShowDialog(this);
+            var form = new CreatePrintBarcode(this);
+            form.ShowDialog();
         }
+
+       
     }
 }

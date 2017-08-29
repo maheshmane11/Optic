@@ -16,5 +16,17 @@ namespace Optic.Windows.Master
         {
             InitializeComponent();
         }
+
+        private MainForm mainForm = null;
+        public CreateExpanseMaster(Form callingForm)
+        {
+            mainForm = callingForm as MainForm;
+            InitializeComponent();
+        }
+
+        private void CreateExpanseMaster_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

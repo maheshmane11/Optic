@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "CreatePrintBarcode";
-            this.Text = "Print Barcode";
+            this.Text = "Print Barcode";            
             this.ResumeLayout(false);
 
         }

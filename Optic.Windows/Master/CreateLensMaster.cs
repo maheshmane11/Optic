@@ -16,5 +16,15 @@ namespace Optic.Windows.Master
         {
             InitializeComponent();
         }
+        private MainForm mainForm = null;
+        public CreateLensMaster(Form callingForm)
+        {
+            mainForm = callingForm as MainForm;
+            InitializeComponent();
+        }
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

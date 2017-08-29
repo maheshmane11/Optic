@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarManager.cs" />
     <Compile Include="OnFormLoadManager.cs" />
     <Compile Include="OpticMasterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

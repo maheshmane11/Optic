@@ -16,5 +16,12 @@ namespace Optic.Windows.Master
         {
             InitializeComponent();
         }
+
+        private MainForm mainForm = null;
+        public CreatePrintBarcode(Form callingForm)
+        {
+            mainForm = callingForm as MainForm;
+            InitializeComponent();
+        }        
     }
 }

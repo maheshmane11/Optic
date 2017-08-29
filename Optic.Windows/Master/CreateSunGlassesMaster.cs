@@ -15,6 +15,18 @@ namespace Optic.Windows.Master
         public CreateSunGlassesMaster()
         {
             InitializeComponent();
-        }       
+        }
+
+        private MainForm mainForm = null;
+        public CreateSunGlassesMaster(Form callingForm)
+        {
+            mainForm = callingForm as MainForm;
+            InitializeComponent();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

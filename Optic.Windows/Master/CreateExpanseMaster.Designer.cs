@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "CreateExpanseMaster";
             this.Text = "New Expanse Master";
+            this.Load += new System.EventHandler(this.CreateExpanseMaster_Load);
             this.ResumeLayout(false);
 
         }

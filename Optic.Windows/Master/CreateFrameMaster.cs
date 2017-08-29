@@ -20,19 +20,45 @@ namespace Optic.Windows.Master
             InitializeComponent();
         }
 
+        private MainForm mainForm = null;
+        public CreateFrameMaster(Form callingForm)
+        {
+            mainForm = callingForm as MainForm;
+            InitializeComponent();
+        }
+
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             OpticMasterManager manager = new OpticMasterManager();
             OpticMasterDTO opticMasterDto = new OpticMasterDTO();
-            opticMasterDto.MasterName = txtName.Text;
-            opticMasterDto.PurchaseRate = Convert.ToDouble(txtPurchaseRate.Text);
-            opticMasterDto.SellRate =Convert.ToDouble(txtSellRate.Text.Trim());
-            opticMasterDto.OpBal = Convert.ToDouble(txtOpBal.Text);
-            opticMasterDto.MasterTypeID = (int)MasterTypeEnum.FrameMaster;
-            opticMasterDto.IsDeleted = (int)IsDeletedEnum.False;
 
-            manager.AddUpdateOpticMaster(opticMasterDto);
+            if (!manager.CheckMasterExists(txtName.Text, (int)MasterTypeEnum.FrameMaster))
+            {
+                opticMasterDto.MasterName = txtName.Text;
+                opticMasterDto.PurchaseRate = string.IsNullOrEmpty(txtPurchaseRate.Text) ? 0 : Convert.ToDouble(txtPurchaseRate.Text.Trim());
+                opticMasterDto.SellRate = string.IsNullOrEmpty(txtSellRate.Text) ? 0 : Convert.ToDouble(txtSellRate.Text);
+                opticMasterDto.OpBal = string.IsNullOrEmpty(txtOpBal.Text) ? 0 : Convert.ToDouble(txtOpBal.Text);
+                opticMasterDto.MasterTypeID = (int)MasterTypeEnum.FrameMaster;
+                opticMasterDto.IsDeleted = false;
+                if (manager.AddUpdateOpticMaster(opticMasterDto))
+                {                  
+                    
+                    this.mainForm.StatusLabelText = "Record saved successfully.";
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Problem in saving saving data. Try Again.");
+            }
+            else
+            {
+                MessageBox.Show("Name already exists. Enter new name.");
+            }
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
