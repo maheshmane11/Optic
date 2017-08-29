@@ -16,6 +16,7 @@ namespace Optic.Windows.Master
         {
             InitializeComponent();
         }
+
         private MainForm mainForm = null;
         public CreateVendorMaster(Form callingForm)
         {

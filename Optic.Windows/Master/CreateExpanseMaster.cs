@@ -24,9 +24,6 @@ namespace Optic.Windows.Master
             InitializeComponent();
         }
 
-        private void CreateExpanseMaster_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
