@@ -25,9 +25,9 @@ namespace Optic.Business
                     opticMasterDto.CreatedBy = 1;
                     opticMasterDto.CreatedDate = DateTime.Now;
                 }
-               return opticMasterDataAccess.AddUpdateOpticMaster(opticMasterDto);               
+                return opticMasterDataAccess.AddUpdateOpticMaster(opticMasterDto);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -36,6 +36,11 @@ namespace Optic.Business
         public bool CheckMasterExists(string name, int masterTypeId)
         {
             return opticMasterDataAccess.CheckMasterExists(name, masterTypeId);
+        }
+
+        public List<OpticDisplayMasterDTO> GetMasterList(int masterTypeId)
+        {
+            return opticMasterDataAccess.GetMasterList(masterTypeId);
         }
     }
 }

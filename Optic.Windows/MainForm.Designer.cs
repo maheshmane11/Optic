@@ -41,6 +41,9 @@
             this.menuPrintBarcode = new System.Windows.Forms.ToolStripMenuItem();
             this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAllMasters = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDisplayVendorMaster = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDisplayexpanseMaster = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblMainFormStatus = new System.Windows.Forms.Label();
             this.mainMenu.SuspendLayout();
@@ -59,7 +62,6 @@
             this.mainMenu.Size = new System.Drawing.Size(810, 24);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "menuStrip1";
-            
             // 
             // fileToolStripMenuItem
             // 
@@ -146,9 +148,32 @@
             // 
             // displayToolStripMenuItem
             // 
+            this.displayToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuAllMasters,
+            this.menuDisplayVendorMaster,
+            this.menuDisplayexpanseMaster});
             this.displayToolStripMenuItem.Name = "displayToolStripMenuItem";
             this.displayToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.displayToolStripMenuItem.Text = "Display";
+            // 
+            // menuAllMasters
+            // 
+            this.menuAllMasters.Name = "menuAllMasters";
+            this.menuAllMasters.Size = new System.Drawing.Size(155, 22);
+            this.menuAllMasters.Text = "All Masters";
+            this.menuAllMasters.Click += new System.EventHandler(this.menuAllMasters_Click);
+            // 
+            // menuDisplayVendorMaster
+            // 
+            this.menuDisplayVendorMaster.Name = "menuDisplayVendorMaster";
+            this.menuDisplayVendorMaster.Size = new System.Drawing.Size(155, 22);
+            this.menuDisplayVendorMaster.Text = "Vendor Master";
+            // 
+            // menuDisplayexpanseMaster
+            // 
+            this.menuDisplayexpanseMaster.Name = "menuDisplayexpanseMaster";
+            this.menuDisplayexpanseMaster.Size = new System.Drawing.Size(155, 22);
+            this.menuDisplayexpanseMaster.Text = "Expanse Master";
             // 
             // aboutToolStripMenuItem
             // 
@@ -199,6 +224,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuVendorMaster;
         private System.Windows.Forms.ToolStripMenuItem menuExpanseMaster;
         private System.Windows.Forms.ToolStripMenuItem menuPrintBarcode;
-        private System.Windows.Forms.Label lblMainFormStatus;       
+        private System.Windows.Forms.Label lblMainFormStatus;
+        private System.Windows.Forms.ToolStripMenuItem menuAllMasters;
+        private System.Windows.Forms.ToolStripMenuItem menuDisplayVendorMaster;
+        private System.Windows.Forms.ToolStripMenuItem menuDisplayexpanseMaster;
     }
 }

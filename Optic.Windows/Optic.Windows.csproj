@@ -58,6 +58,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Display\ExpanseMasterDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display\ExpanseMasterDisplay.Designer.cs">
+      <DependentUpon>ExpanseMasterDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display\OpticMasterDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display\OpticMasterDisplay.Designer.cs">
+      <DependentUpon>OpticMasterDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display\VendorMasterDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display\VendorMasterDisplay.Designer.cs">
+      <DependentUpon>VendorMasterDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\CreateAccessoryMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +132,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Display\ExpanseMasterDisplay.resx">
+      <DependentUpon>ExpanseMasterDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display\OpticMasterDisplay.resx">
+      <DependentUpon>OpticMasterDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display\VendorMasterDisplay.resx">
+      <DependentUpon>VendorMasterDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\CreateAccessoryMaster.resx">
       <DependentUpon>CreateAccessoryMaster.cs</DependentUpon>
     </EmbeddedResource>

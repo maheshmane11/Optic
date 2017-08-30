@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Optic.Windows.Master;
+using Optic.Windows.Display;
 
 namespace Optic.Windows
 {
@@ -86,6 +87,10 @@ namespace Optic.Windows
             form.ShowDialog();
         }
 
-       
+        private void menuAllMasters_Click(object sender, EventArgs e)
+        {
+            var form = new OpticMasterDisplay(this);
+            form.ShowDialog();
+        }
     }
 }

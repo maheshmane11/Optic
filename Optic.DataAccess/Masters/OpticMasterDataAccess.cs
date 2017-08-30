@@ -67,9 +67,50 @@ namespace Optic.DataAccess.Masters
                 {
                     count = uoW.opticMasterRepository
                     .Get(x => x.MasterName.Equals(name.Trim()) && x.MasterTypeID == masterTypeId).Count();
-                }                
+                }
             }
             return count > 0 ? true : false;
+        }
+
+        public List<OpticDisplayMasterDTO> GetMasterList(int masterTypeId)
+        {
+            try
+            {
+                List<OpticDisplayMasterDTO> OpticDisplayMasterList = new List<OpticDisplayMasterDTO>();
+                using (var uoW = new UnitOfWork())
+                {
+                    var masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId).ToList();
+                    OpticDisplayMasterDTO newData = new OpticDisplayMasterDTO();
+
+                    //OpticDisplayMasterList =
+                    //        masterList.Select(item => new OpticDisplayMasterDTO
+                    //        {
+                    //            OpticMasterID = item.OpticMasterID,
+                    //            Name = item.MasterName,
+                    //            Barcode = "ABC",
+                    //            PurchaseRate = item.PurchaseRate,
+                    //            SellRate = item.SellRate,
+                    //            OpBal = item.OpBal
+                    //        }).ToList();
+
+
+                    foreach (var item in masterList)
+                    {
+                        newData.OpticMasterID = item.OpticMasterID;
+                        newData.Name = item.MasterName;
+                        newData.Barcode = "ABC";
+                        newData.PurchaseRate = item.PurchaseRate;
+                        newData.SellRate = item.SellRate;
+                        newData.OpBal = item.OpBal;
+                        OpticDisplayMasterList.Add(newData);
+                    }
+                }
+                return OpticDisplayMasterList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
