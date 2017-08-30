@@ -43,7 +43,7 @@ namespace Optic.Windows.Master
                 if (manager.AddUpdateOpticMaster(opticMasterDto))
                 {
 
-                    this.mainForm.StatusLabelText = "Record saved successfully.";
+                    this.mainForm.StatusLabelText = "Contact lens saved successfully.";
                     this.Close();
                 }
                 else

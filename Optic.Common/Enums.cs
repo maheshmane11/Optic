@@ -14,7 +14,8 @@ namespace Optic.Common
             LensMaster=2,
             ContactLensMaster=3,
             AccessoryMaster = 4,
-            SunGlassesMaster =5            
+            SunGlassesMaster =5,
+            ExpanseMaster = 6
         };
 
         public enum IsDeletedEnum

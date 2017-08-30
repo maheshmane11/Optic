@@ -46,7 +46,7 @@
             this.lblFrameMasterHeading.AutoSize = true;
             this.lblFrameMasterHeading.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFrameMasterHeading.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFrameMasterHeading.Location = new System.Drawing.Point(45, 35);
+            this.lblFrameMasterHeading.Location = new System.Drawing.Point(45, 34);
             this.lblFrameMasterHeading.Name = "lblFrameMasterHeading";
             this.lblFrameMasterHeading.Size = new System.Drawing.Size(198, 29);
             this.lblFrameMasterHeading.TabIndex = 0;
@@ -55,7 +55,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(47, 82);
+            this.lblName.Location = new System.Drawing.Point(47, 88);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(35, 13);
             this.lblName.TabIndex = 1;
@@ -90,7 +90,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(143, 82);
+            this.txtName.Location = new System.Drawing.Point(143, 81);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(255, 20);
             this.txtName.TabIndex = 5;

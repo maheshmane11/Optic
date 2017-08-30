@@ -41,7 +41,7 @@ namespace Optic.Windows.Master
                 opticMasterDto.IsDeleted = false;
                 if (manager.AddUpdateOpticMaster(opticMasterDto))
                 {
-                    this.mainForm.StatusLabelText = "Record saved successfully.";
+                    this.mainForm.StatusLabelText = "Lens added successfully.";
                     this.Close();
                 }
                 else

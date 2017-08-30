@@ -26,8 +26,7 @@ namespace Optic.Windows.Master
             mainForm = callingForm as MainForm;
             InitializeComponent();
         }
-
-        
+                
         private void btnSave_Click(object sender, EventArgs e)
         {
             OpticMasterManager manager = new OpticMasterManager();
