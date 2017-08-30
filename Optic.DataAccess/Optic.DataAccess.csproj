@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTOs\OpticMasterDTO.cs" />
+    <Compile Include="DTOs\VendorMasterDTO.cs" />
     <Compile Include="Masters\OpticMasterDataAccess.cs" />
+    <Compile Include="Masters\VendorMasterDataAccess.cs" />
     <Compile Include="OnFormLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

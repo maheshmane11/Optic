@@ -35,7 +35,7 @@ namespace Optic.Windows
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OnFormLoadManager.SetEFInitializer();
+            OnFormLoadManager.SetEFSettings();
         }
 
         private void lenseGlassMasterToolStripMenuItem_Click(object sender, EventArgs e)

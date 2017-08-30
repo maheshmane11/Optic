@@ -21,7 +21,7 @@ namespace Optic.DataAccess.Masters
                     using (var uoW = new UnitOfWork())
                     {
                         var model = uoW.opticMasterRepository.GetById(opticMasterDto.OpticMasterID);
-                        model.MasterName = opticMasterDto.MasterName;
+                        model.MasterName = opticMasterDto.MasterName.Trim();
                         model.MasterTypeID = opticMasterDto.MasterTypeID;
                         model.PurchaseRate = opticMasterDto.PurchaseRate;
                         model.SellRate = opticMasterDto.SellRate;
@@ -60,13 +60,16 @@ namespace Optic.DataAccess.Masters
 
         public bool CheckMasterExists(string name, int masterTypeId)
         {
+            int count = 0;
             using (var uoW = new UnitOfWork())
             {
-                var count = uoW.opticMasterRepository
+                if (uoW.opticMasterRepository.Get().Count() > 0)
+                {
+                    count = uoW.opticMasterRepository
                     .Get(x => x.MasterName.Equals(name.Trim()) && x.MasterTypeID == masterTypeId).Count();
-
-                return count > 0 ? true : false;
+                }                
             }
+            return count > 0 ? true : false;
         }
     }
 }

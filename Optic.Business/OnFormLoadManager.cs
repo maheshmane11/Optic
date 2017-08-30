@@ -9,9 +9,9 @@ namespace Optic.Business
 {
    public class OnFormLoadManager
     {
-        public static void SetEFInitializer()
+        public static void SetEFSettings()
         {
-            OnFormLoad.SetEFInitializer();
+            OnFormLoad.SetEFSettings();
         }
     }
 }

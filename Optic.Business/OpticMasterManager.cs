@@ -25,8 +25,7 @@ namespace Optic.Business
                     opticMasterDto.CreatedBy = 1;
                     opticMasterDto.CreatedDate = DateTime.Now;
                 }
-               return opticMasterDataAccess.AddUpdateOpticMaster(opticMasterDto);
-               
+               return opticMasterDataAccess.AddUpdateOpticMaster(opticMasterDto);               
             }
             catch(Exception ex)
             {

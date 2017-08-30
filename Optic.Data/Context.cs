@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Reflection;
 using System.Data.Entity.ModelConfiguration;
 using Optic.Data.Models;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Optic.Data
 {
@@ -25,6 +26,9 @@ namespace Optic.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //Switch off Pluralizing Table Names
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
             var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()
            .Where(type => !String.IsNullOrEmpty(type.Namespace))
            .Where(type => type.BaseType != null && type.BaseType.IsGenericType

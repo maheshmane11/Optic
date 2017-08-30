@@ -44,18 +44,25 @@
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblFaxNo = new System.Windows.Forms.Label();
             this.lblEmailId = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtFaxNo = new System.Windows.Forms.TextBox();
+            this.txtEmailId = new System.Windows.Forms.TextBox();
             this.txtWebsite = new System.Windows.Forms.TextBox();
             this.lblWebSite = new System.Windows.Forms.Label();
             this.lblGST = new System.Windows.Forms.Label();
             this.txtGstNo = new System.Windows.Forms.TextBox();
+            this.lblVatNo = new System.Windows.Forms.Label();
+            this.lblCstNo = new System.Windows.Forms.Label();
+            this.lblLbtNo = new System.Windows.Forms.Label();
+            this.txtVatNo = new System.Windows.Forms.TextBox();
+            this.txtLbtNo = new System.Windows.Forms.TextBox();
+            this.txtCstNo = new System.Windows.Forms.TextBox();
+            this.lblTaxes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(292, 383);
+            this.btnCancel.Location = new System.Drawing.Point(271, 452);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(105, 23);
             this.btnCancel.TabIndex = 43;
@@ -64,23 +71,25 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(159, 383);
+            this.btnSave.Location = new System.Drawing.Point(134, 452);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 23);
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtOpBal
             // 
-            this.txtOpBal.Location = new System.Drawing.Point(121, 329);
+            this.txtOpBal.Location = new System.Drawing.Point(121, 315);
             this.txtOpBal.Name = "txtOpBal";
             this.txtOpBal.Size = new System.Drawing.Size(100, 20);
             this.txtOpBal.TabIndex = 41;
             // 
             // txtMobileNumber
             // 
-            this.txtMobileNumber.Location = new System.Drawing.Point(121, 286);
+            this.txtMobileNumber.Location = new System.Drawing.Point(121, 279);
+            this.txtMobileNumber.MaxLength = 10;
             this.txtMobileNumber.Name = "txtMobileNumber";
             this.txtMobileNumber.Size = new System.Drawing.Size(100, 20);
             this.txtMobileNumber.TabIndex = 40;
@@ -102,7 +111,7 @@
             // lblOpBal
             // 
             this.lblOpBal.AutoSize = true;
-            this.lblOpBal.Location = new System.Drawing.Point(31, 332);
+            this.lblOpBal.Location = new System.Drawing.Point(28, 315);
             this.lblOpBal.Name = "lblOpBal";
             this.lblOpBal.Size = new System.Drawing.Size(42, 13);
             this.lblOpBal.TabIndex = 37;
@@ -111,7 +120,7 @@
             // lblMobileNumber
             // 
             this.lblMobileNumber.AutoSize = true;
-            this.lblMobileNumber.Location = new System.Drawing.Point(28, 289);
+            this.lblMobileNumber.Location = new System.Drawing.Point(28, 286);
             this.lblMobileNumber.Name = "lblMobileNumber";
             this.lblMobileNumber.Size = new System.Drawing.Size(78, 13);
             this.lblMobileNumber.TabIndex = 36;
@@ -190,30 +199,30 @@
             this.lblEmailId.TabIndex = 48;
             this.lblEmailId.Text = "Email Id";
             // 
-            // textBox1
+            // txtPhoneNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 248);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 49;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(121, 248);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtPhoneNumber.TabIndex = 49;
             // 
-            // textBox2
+            // txtFaxNo
             // 
-            this.textBox2.Location = new System.Drawing.Point(322, 216);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 50;
+            this.txtFaxNo.Location = new System.Drawing.Point(334, 216);
+            this.txtFaxNo.Name = "txtFaxNo";
+            this.txtFaxNo.Size = new System.Drawing.Size(100, 20);
+            this.txtFaxNo.TabIndex = 50;
             // 
-            // textBox3
+            // txtEmailId
             // 
-            this.textBox3.Location = new System.Drawing.Point(322, 252);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 51;
+            this.txtEmailId.Location = new System.Drawing.Point(334, 252);
+            this.txtEmailId.Name = "txtEmailId";
+            this.txtEmailId.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailId.TabIndex = 51;
             // 
             // txtWebsite
             // 
-            this.txtWebsite.Location = new System.Drawing.Point(322, 293);
+            this.txtWebsite.Location = new System.Drawing.Point(334, 286);
             this.txtWebsite.Name = "txtWebsite";
             this.txtWebsite.Size = new System.Drawing.Size(100, 20);
             this.txtWebsite.TabIndex = 52;
@@ -221,7 +230,7 @@
             // lblWebSite
             // 
             this.lblWebSite.AutoSize = true;
-            this.lblWebSite.Location = new System.Drawing.Point(259, 293);
+            this.lblWebSite.Location = new System.Drawing.Point(259, 289);
             this.lblWebSite.Name = "lblWebSite";
             this.lblWebSite.Size = new System.Drawing.Size(48, 13);
             this.lblWebSite.TabIndex = 53;
@@ -230,7 +239,7 @@
             // lblGST
             // 
             this.lblGST.AutoSize = true;
-            this.lblGST.Location = new System.Drawing.Point(259, 332);
+            this.lblGST.Location = new System.Drawing.Point(268, 389);
             this.lblGST.Name = "lblGST";
             this.lblGST.Size = new System.Drawing.Size(49, 13);
             this.lblGST.TabIndex = 54;
@@ -238,23 +247,88 @@
             // 
             // txtGstNo
             // 
-            this.txtGstNo.Location = new System.Drawing.Point(322, 325);
+            this.txtGstNo.Location = new System.Drawing.Point(334, 386);
             this.txtGstNo.Name = "txtGstNo";
             this.txtGstNo.Size = new System.Drawing.Size(100, 20);
             this.txtGstNo.TabIndex = 55;
+            // 
+            // lblVatNo
+            // 
+            this.lblVatNo.AutoSize = true;
+            this.lblVatNo.Location = new System.Drawing.Point(28, 389);
+            this.lblVatNo.Name = "lblVatNo";
+            this.lblVatNo.Size = new System.Drawing.Size(48, 13);
+            this.lblVatNo.TabIndex = 56;
+            this.lblVatNo.Text = "VAT No.";
+            // 
+            // lblCstNo
+            // 
+            this.lblCstNo.AutoSize = true;
+            this.lblCstNo.Location = new System.Drawing.Point(268, 422);
+            this.lblCstNo.Name = "lblCstNo";
+            this.lblCstNo.Size = new System.Drawing.Size(48, 13);
+            this.lblCstNo.TabIndex = 57;
+            this.lblCstNo.Text = "CST No.";
+            // 
+            // lblLbtNo
+            // 
+            this.lblLbtNo.AutoSize = true;
+            this.lblLbtNo.Location = new System.Drawing.Point(26, 422);
+            this.lblLbtNo.Name = "lblLbtNo";
+            this.lblLbtNo.Size = new System.Drawing.Size(47, 13);
+            this.lblLbtNo.TabIndex = 58;
+            this.lblLbtNo.Text = "LBT No.";
+            // 
+            // txtVatNo
+            // 
+            this.txtVatNo.Location = new System.Drawing.Point(121, 382);
+            this.txtVatNo.Name = "txtVatNo";
+            this.txtVatNo.Size = new System.Drawing.Size(100, 20);
+            this.txtVatNo.TabIndex = 59;
+            // 
+            // txtLbtNo
+            // 
+            this.txtLbtNo.Location = new System.Drawing.Point(121, 415);
+            this.txtLbtNo.Name = "txtLbtNo";
+            this.txtLbtNo.Size = new System.Drawing.Size(100, 20);
+            this.txtLbtNo.TabIndex = 60;
+            // 
+            // txtCstNo
+            // 
+            this.txtCstNo.Location = new System.Drawing.Point(334, 415);
+            this.txtCstNo.Name = "txtCstNo";
+            this.txtCstNo.Size = new System.Drawing.Size(100, 20);
+            this.txtCstNo.TabIndex = 61;
+            // 
+            // lblTaxes
+            // 
+            this.lblTaxes.AutoSize = true;
+            this.lblTaxes.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxes.Location = new System.Drawing.Point(28, 347);
+            this.lblTaxes.Name = "lblTaxes";
+            this.lblTaxes.Size = new System.Drawing.Size(36, 23);
+            this.lblTaxes.TabIndex = 62;
+            this.lblTaxes.Text = "Tax";
             // 
             // CreateVendorMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 430);
+            this.ClientSize = new System.Drawing.Size(540, 497);
+            this.Controls.Add(this.lblTaxes);
+            this.Controls.Add(this.txtCstNo);
+            this.Controls.Add(this.txtLbtNo);
+            this.Controls.Add(this.txtVatNo);
+            this.Controls.Add(this.lblLbtNo);
+            this.Controls.Add(this.lblCstNo);
+            this.Controls.Add(this.lblVatNo);
             this.Controls.Add(this.txtGstNo);
             this.Controls.Add(this.lblGST);
             this.Controls.Add(this.lblWebSite);
             this.Controls.Add(this.txtWebsite);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEmailId);
+            this.Controls.Add(this.txtFaxNo);
+            this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.lblEmailId);
             this.Controls.Add(this.lblFaxNo);
             this.Controls.Add(this.lblPhoneNumber);
@@ -296,12 +370,19 @@
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Label lblFaxNo;
         private System.Windows.Forms.Label lblEmailId;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
+        private System.Windows.Forms.TextBox txtFaxNo;
+        private System.Windows.Forms.TextBox txtEmailId;
         private System.Windows.Forms.TextBox txtWebsite;
         private System.Windows.Forms.Label lblWebSite;
         private System.Windows.Forms.Label lblGST;
         private System.Windows.Forms.TextBox txtGstNo;
+        private System.Windows.Forms.Label lblVatNo;
+        private System.Windows.Forms.Label lblCstNo;
+        private System.Windows.Forms.Label lblLbtNo;
+        private System.Windows.Forms.TextBox txtVatNo;
+        private System.Windows.Forms.TextBox txtLbtNo;
+        private System.Windows.Forms.TextBox txtCstNo;
+        private System.Windows.Forms.Label lblTaxes;
     }
 }
