@@ -72,44 +72,69 @@ namespace Optic.DataAccess.Masters
             return count > 0 ? true : false;
         }
 
-        public List<OpticDisplayMasterDTO> GetMasterList(int masterTypeId)
+        public List<OpticDisplayMasterDTO> GetMasterList(int masterTypeId, string searchText)
         {
             try
             {
                 List<OpticDisplayMasterDTO> OpticDisplayMasterList = new List<OpticDisplayMasterDTO>();
                 using (var uoW = new UnitOfWork())
                 {
-                    var masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId).ToList();
+                    var masterList = new List<OpticMasters>();
+                    if(string.IsNullOrEmpty(searchText))
+                       masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && !x.IsDeleted).ToList();
+                    else
+                        masterList= uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && x.MasterName.Contains(searchText) && !x.IsDeleted).ToList();
                     OpticDisplayMasterDTO newData = new OpticDisplayMasterDTO();
 
-                    //OpticDisplayMasterList =
-                    //        masterList.Select(item => new OpticDisplayMasterDTO
-                    //        {
-                    //            OpticMasterID = item.OpticMasterID,
-                    //            Name = item.MasterName,
-                    //            Barcode = "ABC",
-                    //            PurchaseRate = item.PurchaseRate,
-                    //            SellRate = item.SellRate,
-                    //            OpBal = item.OpBal
-                    //        }).ToList();
+                    OpticDisplayMasterList =
+                            masterList.Select(item => new OpticDisplayMasterDTO
+                            {
+                                OpticMasterID = item.OpticMasterID,
+                                Name = item.MasterName,
+                                Barcode = "ABC",
+                                PurchaseRate = item.PurchaseRate,
+                                SellRate = item.SellRate,
+                                OpBal = item.OpBal
+                            }).ToList();
 
 
-                    foreach (var item in masterList)
-                    {
-                        newData.OpticMasterID = item.OpticMasterID;
-                        newData.Name = item.MasterName;
-                        newData.Barcode = "ABC";
-                        newData.PurchaseRate = item.PurchaseRate;
-                        newData.SellRate = item.SellRate;
-                        newData.OpBal = item.OpBal;
-                        OpticDisplayMasterList.Add(newData);
-                    }
+                    //foreach (var item in masterList)
+                    //{
+                    //    newData = new OpticDisplayMasterDTO();
+                    //    newData.OpticMasterID = item.OpticMasterID;
+                    //    newData.Name = item.MasterName;
+                    //    newData.Barcode = "ABC";
+                    //    newData.PurchaseRate = item.PurchaseRate;
+                    //    newData.SellRate = item.SellRate;
+                    //    newData.OpBal = item.OpBal;
+                    //    OpticDisplayMasterList.Add(newData);
+                    //}
                 }
                 return OpticDisplayMasterList;
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        
+        public bool DeleteOpticMasterById(int opticMasterId)
+        {
+            try
+            {
+                using (var uoW = new UnitOfWork())
+                {
+                    var opticMaster=uoW.opticMasterRepository.GetById(opticMasterId);
+                    opticMaster.IsDeleted = true;
+                    opticMaster.ModifiedBy = 1;
+                    opticMaster.ModifiedDate = DateTime.Now;
+                    uoW.opticMasterRepository.Update(opticMaster);
+                }
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
             }
         }
     }

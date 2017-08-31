@@ -82,6 +82,7 @@
             this.txtSearchMaster.Name = "txtSearchMaster";
             this.txtSearchMaster.Size = new System.Drawing.Size(110, 20);
             this.txtSearchMaster.TabIndex = 4;
+            this.txtSearchMaster.TextChanged += new System.EventHandler(this.txtSearchMaster_TextChanged);
             // 
             // panel1
             // 

@@ -11,6 +11,7 @@ namespace Optic.Business
     public class OpticMasterManager
     {
         OpticMasterDataAccess opticMasterDataAccess = new OpticMasterDataAccess();
+
         public bool AddUpdateOpticMaster(OpticMasterDTO opticMasterDto)
         {
             try
@@ -38,9 +39,14 @@ namespace Optic.Business
             return opticMasterDataAccess.CheckMasterExists(name, masterTypeId);
         }
 
-        public List<OpticDisplayMasterDTO> GetMasterList(int masterTypeId)
+        public List<OpticDisplayMasterDTO> GetMasterList(int masterTypeId, string searchText)
         {
-            return opticMasterDataAccess.GetMasterList(masterTypeId);
+            return opticMasterDataAccess.GetMasterList(masterTypeId,searchText);
+        }
+
+        public bool DeleteOpticMasterById(int opticMasterId)
+        {
+            return opticMasterDataAccess.DeleteOpticMasterById(opticMasterId);
         }
     }
 }
