@@ -87,9 +87,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridDisplayMaster);
-            this.panel1.Location = new System.Drawing.Point(79, 144);
+            this.panel1.Location = new System.Drawing.Point(79, 131);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 326);
+            this.panel1.Size = new System.Drawing.Size(775, 311);
             this.panel1.TabIndex = 5;
             // 
             // dataGridDisplayMaster
@@ -97,14 +97,14 @@
             this.dataGridDisplayMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridDisplayMaster.Location = new System.Drawing.Point(13, 12);
             this.dataGridDisplayMaster.Name = "dataGridDisplayMaster";
-            this.dataGridDisplayMaster.Size = new System.Drawing.Size(794, 300);
+            this.dataGridDisplayMaster.Size = new System.Drawing.Size(749, 289);
             this.dataGridDisplayMaster.TabIndex = 0;
             // 
             // OpticMasterDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 482);
+            this.ClientSize = new System.Drawing.Size(870, 464);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtSearchMaster);
             this.Controls.Add(this.label3);
