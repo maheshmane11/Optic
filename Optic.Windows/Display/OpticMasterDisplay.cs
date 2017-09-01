@@ -1,6 +1,7 @@
 ﻿using Optic.Business;
 using Optic.Common;
 using Optic.DataAccess.DTOs;
+using Optic.Windows.Master;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace Optic.Windows.Display
         }
 
         private MainForm mainForm = null;
+
+
         public OpticMasterDisplay(Form callingForm)
         {
             mainForm = callingForm as MainForm;
@@ -71,12 +74,26 @@ namespace Optic.Windows.Display
 
             dataGridDisplayMaster.Columns[1].Width = 150;
             dataGridDisplayMaster.Columns[2].Width = 100;
-            dataGridDisplayMaster.Columns[3].Width = 150;
+            dataGridDisplayMaster.Columns[3].Width = 100;
             dataGridDisplayMaster.Columns[4].Width = 100;
 
             dataGridDisplayMaster.Columns["PurchaseRate"].HeaderText = "Purchase Rate";
             dataGridDisplayMaster.Columns["SellRate"].HeaderText = "Sell Rate";
             dataGridDisplayMaster.Columns["OpBal"].HeaderText = "Op Bal";
+
+            if(!dataGridDisplayMaster.Columns.Contains("btnEditRow"))
+            {
+                var editButton = new DataGridViewButtonColumn();
+                editButton.Name = "btnEditRow";
+                editButton.HeaderText = "Edit";
+                editButton.Text = "Edit";
+                editButton.UseColumnTextForButtonValue = true;
+                dataGridDisplayMaster.Columns.Insert(dataGridDisplayMaster.ColumnCount, editButton);
+            }
+            else
+            {
+                dataGridDisplayMaster.Columns["btnEditRow"].Visible = true;
+            }
             if (!dataGridDisplayMaster.Columns.Contains("btnDeleteRow"))
             {
                 var deleteButton = new DataGridViewButtonColumn();
@@ -84,33 +101,29 @@ namespace Optic.Windows.Display
                 deleteButton.HeaderText = "Delete";
                 deleteButton.Text = "Delete";
                 deleteButton.UseColumnTextForButtonValue = true;
-                dataGridDisplayMaster.Columns.Insert(dataGridDisplayMaster.ColumnCount, deleteButton);                
+                dataGridDisplayMaster.Columns.Insert(dataGridDisplayMaster.ColumnCount, deleteButton);
+                //Same event for edit and delete button
+                dataGridDisplayMaster.CellClick += new DataGridViewCellEventHandler(dataGridDisplayMaster_CellClick);
             }
             else
-                dataGridDisplayMaster.Columns["btnDeleteRow"].Visible = true;
-            dataGridDisplayMaster.CellClick += new DataGridViewCellEventHandler(dataGridDisplayMaster_CellClick);
-
+            {
+                dataGridDisplayMaster.Columns["btnDeleteRow"].Visible = true;                
+            }           
         }
 
         void dataGridDisplayMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            if (dgv != null)
+            if (dgv != null && e.ColumnIndex != -1)
             {
                 DataGridViewButtonCell b = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
                 if (b != null)
                 {
                     int opticMasterId = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["Id"].Value);
-                    if (manager.DeleteOpticMasterById(opticMasterId))
-                    {
-                        int selectedMasterValue = Convert.ToInt32(((KeyValuePair<int, string>)ddlOpticMasters.SelectedItem).Key);
-                        FillMasterGrid(selectedMasterValue);
-                    }
+                    if (b.Value.ToString().Equals("Delete"))
+                        DeleteOpticMaster(opticMasterId);
                     else
-                    {
-                        MessageBox.Show("Problem while deleting the record. Try again!");
-                    }
-
+                        EditOpticMaster(opticMasterId);
                 }
             }
         }
@@ -127,6 +140,61 @@ namespace Optic.Windows.Display
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DeleteOpticMaster(int opticMasterId)
+        {
+            if (manager.DeleteOpticMasterById(opticMasterId))
+            {
+                int selectedMasterValue = Convert.ToInt32(((KeyValuePair<int, string>)ddlOpticMasters.SelectedItem).Key);
+                FillMasterGrid(selectedMasterValue);
+            }
+            else
+            {
+                MessageBox.Show("Problem while deleting the record. Try again!");
+            }
+        }
+
+        private void EditOpticMaster(int opticMasterId)
+        {
+            var opticMaster = manager.GetOpticMasterById(opticMasterId);
+            int selectedMasterValue = Convert.ToInt32(((KeyValuePair<int, string>)ddlOpticMasters.SelectedItem).Key); ;
+
+            if (selectedMasterValue == (int)MasterTypeEnum.FrameMaster)
+            {
+                var form = new CreateFrameMaster(opticMaster);
+                form.ShowDialog();
+            }
+            else if (selectedMasterValue == (int)MasterTypeEnum.LensMaster)
+            {
+                var form = new CreateLensMaster(opticMaster);
+                form.ShowDialog();
+            }
+            else if (selectedMasterValue == (int)MasterTypeEnum.ContactLensMaster)
+            {
+                var form = new CreateContactLensMaster(opticMaster);
+                form.ShowDialog();
+            }
+            else if (selectedMasterValue == (int)MasterTypeEnum.SunGlassesMaster)
+            {
+                var form = new CreateSunGlassesMaster(opticMaster);
+                form.ShowDialog();
+            }
+            else if (selectedMasterValue == (int)MasterTypeEnum.AccessoryMaster)
+            {
+                var form = new CreateAccessoryMaster(opticMaster);
+                form.ShowDialog();
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            int selectedMasterValue = Convert.ToInt32(((KeyValuePair<int, string>)ddlOpticMasters.SelectedItem).Key); ;
+
+            if (selectedMasterValue > 0)
+            {
+                FillMasterGrid(selectedMasterValue);
+            }
         }
     }
 }

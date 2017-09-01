@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridDisplayMaster = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDisplayMaster)).BeginInit();
             this.SuspendLayout();
@@ -88,34 +89,44 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridDisplayMaster);
-            this.panel1.Location = new System.Drawing.Point(79, 131);
+            this.panel1.Location = new System.Drawing.Point(41, 131);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 311);
+            this.panel1.Size = new System.Drawing.Size(872, 311);
             this.panel1.TabIndex = 5;
             // 
             // dataGridDisplayMaster
             // 
             this.dataGridDisplayMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDisplayMaster.Location = new System.Drawing.Point(13, 12);
+            this.dataGridDisplayMaster.Location = new System.Drawing.Point(23, 3);
             this.dataGridDisplayMaster.Name = "dataGridDisplayMaster";
-            this.dataGridDisplayMaster.Size = new System.Drawing.Size(749, 289);
+            this.dataGridDisplayMaster.Size = new System.Drawing.Size(828, 289);
             this.dataGridDisplayMaster.TabIndex = 0;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(622, 76);
+            this.btnClose.Location = new System.Drawing.Point(733, 77);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 19;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(584, 77);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // OpticMasterDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 464);
+            this.ClientSize = new System.Drawing.Size(970, 451);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtSearchMaster);
@@ -143,5 +154,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridDisplayMaster;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

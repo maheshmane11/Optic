@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblFrameMasterHeading = new System.Windows.Forms.Label();
+            this.lblHiddenId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -49,6 +50,7 @@
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnSave
             // 
@@ -135,11 +137,20 @@
             this.lblFrameMasterHeading.TabIndex = 22;
             this.lblFrameMasterHeading.Text = "Create New Accessory";
             // 
+            // lblHiddenId
+            // 
+            this.lblHiddenId.AutoSize = true;
+            this.lblHiddenId.Location = new System.Drawing.Point(68, 260);
+            this.lblHiddenId.Name = "lblHiddenId";
+            this.lblHiddenId.Size = new System.Drawing.Size(0, 13);
+            this.lblHiddenId.TabIndex = 33;
+            // 
             // CreateAccessoryMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 273);
+            this.ClientSize = new System.Drawing.Size(485, 293);
+            this.Controls.Add(this.lblHiddenId);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtOpBal);
@@ -153,6 +164,7 @@
             this.Controls.Add(this.lblFrameMasterHeading);
             this.Name = "CreateAccessoryMaster";
             this.Text = "New Accessory";
+            this.Load += new System.EventHandler(this.CreateAccessoryMaster_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblFrameMasterHeading;
+        private System.Windows.Forms.Label lblHiddenId;
     }
 }

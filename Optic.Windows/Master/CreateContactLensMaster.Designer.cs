@@ -39,6 +39,7 @@
             this.lblPurchaseRate = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblFrameMasterHeading = new System.Windows.Forms.Label();
+            this.lblHiddenId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -49,6 +50,7 @@
             this.btnCancel.TabIndex = 43;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnSave
             // 
@@ -135,11 +137,20 @@
             this.lblFrameMasterHeading.TabIndex = 33;
             this.lblFrameMasterHeading.Text = "Create New Contact Lens";
             // 
+            // lblHiddenId
+            // 
+            this.lblHiddenId.AutoSize = true;
+            this.lblHiddenId.Location = new System.Drawing.Point(77, 248);
+            this.lblHiddenId.Name = "lblHiddenId";
+            this.lblHiddenId.Size = new System.Drawing.Size(0, 13);
+            this.lblHiddenId.TabIndex = 44;
+            // 
             // CreateContactLensMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 263);
+            this.ClientSize = new System.Drawing.Size(516, 304);
+            this.Controls.Add(this.lblHiddenId);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtOpBal);
@@ -153,6 +164,7 @@
             this.Controls.Add(this.lblFrameMasterHeading);
             this.Name = "CreateContactLensMaster";
             this.Text = "New Contact Lens";
+            this.Load += new System.EventHandler(this.CreateContactLensMaster_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Label lblPurchaseRate;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblFrameMasterHeading;
+        private System.Windows.Forms.Label lblHiddenId;
     }
 }

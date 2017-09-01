@@ -44,15 +44,15 @@
             this.panel1.Controls.Add(this.dataGridDisplayMaster);
             this.panel1.Location = new System.Drawing.Point(93, 102);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 290);
+            this.panel1.Size = new System.Drawing.Size(469, 284);
             this.panel1.TabIndex = 16;
             // 
             // dataGridDisplayMaster
             // 
             this.dataGridDisplayMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDisplayMaster.Location = new System.Drawing.Point(13, 16);
+            this.dataGridDisplayMaster.Location = new System.Drawing.Point(13, 17);
             this.dataGridDisplayMaster.Name = "dataGridDisplayMaster";
-            this.dataGridDisplayMaster.Size = new System.Drawing.Size(347, 263);
+            this.dataGridDisplayMaster.Size = new System.Drawing.Size(436, 253);
             this.dataGridDisplayMaster.TabIndex = 0;
             // 
             // btnRefresh

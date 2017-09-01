@@ -74,7 +74,7 @@ namespace Optic.Windows.Display
         void dataGridDisplayMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            if (dgv != null)
+            if (dgv != null && e.ColumnIndex != -1)
             {
                 DataGridViewButtonCell b = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
                 if (b != null)

@@ -21,9 +21,17 @@ namespace Optic.Windows.Master
         }
 
         private MainForm mainForm = null;
+        private OpticMasterDTO opticMasterDTO = new OpticMasterDTO();
+
         public CreateAccessoryMaster(Form callingForm)
         {
             mainForm = callingForm as MainForm;
+            InitializeComponent();
+        }
+
+        public CreateAccessoryMaster(OpticMasterDTO objMaster)
+        {
+            opticMasterDTO = objMaster;
             InitializeComponent();
         }
 
@@ -32,8 +40,10 @@ namespace Optic.Windows.Master
             OpticMasterManager manager = new OpticMasterManager();
             OpticMasterDTO opticMasterDto = new OpticMasterDTO();
 
-            if (!manager.CheckMasterExists(txtName.Text, (int)MasterTypeEnum.AccessoryMaster))
+            if (!string.IsNullOrEmpty(lblHiddenId.Text) || !manager.CheckMasterExists(txtName.Text, (int)MasterTypeEnum.AccessoryMaster))
             {
+                if (!string.IsNullOrEmpty(lblHiddenId.Text))
+                    opticMasterDto.OpticMasterID = Convert.ToInt32(lblHiddenId.Text);
                 opticMasterDto.MasterName = txtName.Text;
                 opticMasterDto.PurchaseRate = string.IsNullOrEmpty(txtPurchaseRate.Text) ? 0 : Convert.ToDouble(txtPurchaseRate.Text.Trim());
                 opticMasterDto.SellRate = string.IsNullOrEmpty(txtSellRate.Text) ? 0 : Convert.ToDouble(txtSellRate.Text);
@@ -42,8 +52,8 @@ namespace Optic.Windows.Master
                 opticMasterDto.IsDeleted = false;
                 if (manager.AddUpdateOpticMaster(opticMasterDto))
                 {
-
-                    this.mainForm.StatusLabelText = "Accessory master added successfully.";
+                    if (string.IsNullOrEmpty(lblHiddenId.Text))
+                        this.mainForm.StatusLabelText = "Accessory master added successfully.";
                     this.Close();
                 }
                 else
@@ -56,6 +66,24 @@ namespace Optic.Windows.Master
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CreateAccessoryMaster_Load(object sender, EventArgs e)
+        {
+            lblHiddenId.Visible = false;
+            if (opticMasterDTO != null && opticMasterDTO.OpticMasterID > 0)
+            {
+                lblHiddenId.Text = opticMasterDTO.OpticMasterID.ToString();
+                txtName.Text = opticMasterDTO.MasterName;
+                txtPurchaseRate.Text = Convert.ToString(opticMasterDTO.PurchaseRate);
+                txtSellRate.Text = Convert.ToString(opticMasterDTO.SellRate);
+                txtOpBal.Text = Convert.ToString(opticMasterDTO.OpBal);
+            }
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

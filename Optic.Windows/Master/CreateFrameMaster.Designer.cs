@@ -39,6 +39,7 @@
             this.txtOpBal = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblHiddenId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFrameMasterHeading
@@ -136,11 +137,20 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // lblHiddenId
+            // 
+            this.lblHiddenId.AutoSize = true;
+            this.lblHiddenId.Location = new System.Drawing.Point(47, 250);
+            this.lblHiddenId.Name = "lblHiddenId";
+            this.lblHiddenId.Size = new System.Drawing.Size(0, 13);
+            this.lblHiddenId.TabIndex = 11;
+            // 
             // CreateFrameMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 302);
+            this.Controls.Add(this.lblHiddenId);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtOpBal);
@@ -154,6 +164,7 @@
             this.Controls.Add(this.lblFrameMasterHeading);
             this.Name = "CreateFrameMaster";
             this.Text = "New Frame";
+            this.Load += new System.EventHandler(this.CreateFrameMaster_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +183,6 @@
         private System.Windows.Forms.TextBox txtOpBal;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblHiddenId;
     }
 }

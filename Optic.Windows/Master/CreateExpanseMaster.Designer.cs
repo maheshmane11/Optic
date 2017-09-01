@@ -33,6 +33,7 @@
             this.lblFrameMasterHeading = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblHiddenId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtName
@@ -70,6 +71,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // btnSave
             // 
@@ -81,11 +83,20 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblHiddenId
+            // 
+            this.lblHiddenId.AutoSize = true;
+            this.lblHiddenId.Location = new System.Drawing.Point(114, 150);
+            this.lblHiddenId.Name = "lblHiddenId";
+            this.lblHiddenId.Size = new System.Drawing.Size(0, 13);
+            this.lblHiddenId.TabIndex = 13;
+            // 
             // CreateExpanseMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 185);
+            this.Controls.Add(this.lblHiddenId);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtName);
@@ -93,6 +104,7 @@
             this.Controls.Add(this.lblFrameMasterHeading);
             this.Name = "CreateExpanseMaster";
             this.Text = "New Expanse Master";
+            this.Load += new System.EventHandler(this.CreateExpanseMaster_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +117,6 @@
         private System.Windows.Forms.Label lblFrameMasterHeading;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblHiddenId;
     }
 }

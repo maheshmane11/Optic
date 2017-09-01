@@ -132,6 +132,32 @@ namespace Optic.DataAccess.Masters
             }
         }
 
+        public OpticMasterDTO GetOpticMasterById(int opticMasterId)
+        {
+            using (var uoW = new UnitOfWork())
+            {
+               var opticMaster = uoW.opticMasterRepository.GetFirstOrDefault(x => x.OpticMasterID == opticMasterId && !x.IsDeleted);
+
+                OpticMasterDTO opticMasterDTO = new OpticMasterDTO
+                {
+                    OpticMasterID=opticMaster.OpticMasterID,
+                    MasterName=opticMaster.MasterName,
+                    PurchaseRate=opticMaster.PurchaseRate,
+                    SellRate = opticMaster.SellRate,
+                    OpBal = opticMaster.OpBal,
+                    IsDeleted=opticMaster.IsDeleted,
+                    MasterTypeID=opticMaster.MasterTypeID,
+                    CreatedBy=opticMaster.CreatedBy,
+                    CreatedDate=opticMaster.CreatedDate,
+                    ModifiedBy=opticMaster.ModifiedBy,
+                    ModifiedDate=opticMaster.ModifiedDate
+                };
+
+                return opticMasterDTO;
+
+            }
+        }
+
         public bool DeleteOpticMasterById(int opticMasterId)
         {
             try
