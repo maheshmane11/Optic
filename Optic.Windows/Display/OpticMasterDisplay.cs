@@ -114,7 +114,7 @@ namespace Optic.Windows.Display
         void dataGridDisplayMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            if (dgv != null && e.ColumnIndex != -1)
+            if (dgv != null && e.ColumnIndex != -1 && e.RowIndex != -1)
             {
                 DataGridViewButtonCell b = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
                 if (b != null)
@@ -195,6 +195,11 @@ namespace Optic.Windows.Display
             {
                 FillMasterGrid(selectedMasterValue);
             }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -57,9 +57,9 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(106, 56);
+            this.btnRefresh.Location = new System.Drawing.Point(337, 60);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(128, 26);
+            this.btnRefresh.Size = new System.Drawing.Size(117, 26);
             this.btnRefresh.TabIndex = 17;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             // txtSearchMaster
             // 
-            this.txtSearchMaster.Location = new System.Drawing.Point(319, 63);
+            this.txtSearchMaster.Location = new System.Drawing.Point(163, 63);
             this.txtSearchMaster.Name = "txtSearchMaster";
             this.txtSearchMaster.Size = new System.Drawing.Size(121, 20);
             this.txtSearchMaster.TabIndex = 15;
@@ -76,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(260, 63);
+            this.label3.Location = new System.Drawing.Point(103, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 14;
