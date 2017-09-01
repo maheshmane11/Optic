@@ -80,11 +80,10 @@ namespace Optic.DataAccess.Masters
                 using (var uoW = new UnitOfWork())
                 {
                     var masterList = new List<OpticMasters>();
-                    if(string.IsNullOrEmpty(searchText))
-                       masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && !x.IsDeleted).ToList();
+                    if (string.IsNullOrEmpty(searchText))
+                        masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && !x.IsDeleted).ToList();
                     else
-                        masterList= uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && x.MasterName.Contains(searchText) && !x.IsDeleted).ToList();
-                    OpticDisplayMasterDTO newData = new OpticDisplayMasterDTO();
+                        masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && x.MasterName.Contains(searchText) && !x.IsDeleted).ToList();
 
                     OpticDisplayMasterList =
                             masterList.Select(item => new OpticDisplayMasterDTO
@@ -96,19 +95,6 @@ namespace Optic.DataAccess.Masters
                                 SellRate = item.SellRate,
                                 OpBal = item.OpBal
                             }).ToList();
-
-
-                    //foreach (var item in masterList)
-                    //{
-                    //    newData = new OpticDisplayMasterDTO();
-                    //    newData.OpticMasterID = item.OpticMasterID;
-                    //    newData.Name = item.MasterName;
-                    //    newData.Barcode = "ABC";
-                    //    newData.PurchaseRate = item.PurchaseRate;
-                    //    newData.SellRate = item.SellRate;
-                    //    newData.OpBal = item.OpBal;
-                    //    OpticDisplayMasterList.Add(newData);
-                    //}
                 }
                 return OpticDisplayMasterList;
             }
@@ -117,14 +103,42 @@ namespace Optic.DataAccess.Masters
                 throw ex;
             }
         }
-        
+
+        public List<DisplayExpanseMasterDTO> GetExpenseMasterList(int masterTypeId, string searchText)
+        {
+            try
+            {
+                List<DisplayExpanseMasterDTO> OpticDisplayMasterList = new List<DisplayExpanseMasterDTO>();
+                using (var uoW = new UnitOfWork())
+                {
+                    var masterList = new List<OpticMasters>();
+                    if (string.IsNullOrEmpty(searchText))
+                        masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && !x.IsDeleted).ToList();
+                    else
+                        masterList = uoW.opticMasterRepository.Get(x => x.MasterTypeID == masterTypeId && x.MasterName.Contains(searchText) && !x.IsDeleted).ToList();
+
+                    OpticDisplayMasterList =
+                            masterList.Select(item => new DisplayExpanseMasterDTO
+                            {
+                                OpticMasterId = item.OpticMasterID,
+                                Name = item.MasterName
+                            }).ToList();
+                }
+                return OpticDisplayMasterList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool DeleteOpticMasterById(int opticMasterId)
         {
             try
             {
                 using (var uoW = new UnitOfWork())
                 {
-                    var opticMaster=uoW.opticMasterRepository.GetById(opticMasterId);
+                    var opticMaster = uoW.opticMasterRepository.GetById(opticMasterId);
                     opticMaster.IsDeleted = true;
                     opticMaster.ModifiedBy = 1;
                     opticMaster.ModifiedDate = DateTime.Now;
@@ -132,7 +146,7 @@ namespace Optic.DataAccess.Masters
                 }
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }

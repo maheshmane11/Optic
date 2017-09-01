@@ -105,5 +105,10 @@ namespace Optic.Windows.Display
         {
             FillMasterGrid();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

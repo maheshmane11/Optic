@@ -44,6 +44,11 @@ namespace Optic.Business
             return opticMasterDataAccess.GetMasterList(masterTypeId,searchText);
         }
 
+        public List<DisplayExpanseMasterDTO> GetExpenseMasterList(int masterTypeId, string searchText)
+        {
+            return opticMasterDataAccess.GetExpenseMasterList(masterTypeId, searchText);
+        }
+
         public bool DeleteOpticMasterById(int opticMasterId)
         {
             return opticMasterDataAccess.DeleteOpticMasterById(opticMasterId);

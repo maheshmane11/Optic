@@ -175,6 +175,7 @@
             this.menuDisplayexpanseMaster.Name = "menuDisplayexpanseMaster";
             this.menuDisplayexpanseMaster.Size = new System.Drawing.Size(155, 22);
             this.menuDisplayexpanseMaster.Text = "Expanse Master";
+            this.menuDisplayexpanseMaster.Click += new System.EventHandler(this.menuDisplayexpanseMaster_Click);
             // 
             // aboutToolStripMenuItem
             // 

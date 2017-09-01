@@ -84,8 +84,7 @@ namespace Optic.Windows.Display
                 deleteButton.HeaderText = "Delete";
                 deleteButton.Text = "Delete";
                 deleteButton.UseColumnTextForButtonValue = true;
-                dataGridDisplayMaster.Columns.Insert(6, deleteButton);
-                //dataGridDisplayMaster.Columns.Add();
+                dataGridDisplayMaster.Columns.Insert(dataGridDisplayMaster.ColumnCount, deleteButton);                
             }
             else
                 dataGridDisplayMaster.Columns["btnDeleteRow"].Visible = true;
@@ -123,6 +122,11 @@ namespace Optic.Windows.Display
             {
                 FillMasterGrid(selectedMasterValue);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
