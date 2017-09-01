@@ -58,6 +58,7 @@
             this.txtLbtNo = new System.Windows.Forms.TextBox();
             this.txtCstNo = new System.Windows.Forms.TextBox();
             this.lblTaxes = new System.Windows.Forms.Label();
+            this.lblHiddenId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -310,11 +311,20 @@
             this.lblTaxes.TabIndex = 62;
             this.lblTaxes.Text = "Tax";
             // 
+            // lblHiddenId
+            // 
+            this.lblHiddenId.AutoSize = true;
+            this.lblHiddenId.Location = new System.Drawing.Point(26, 498);
+            this.lblHiddenId.Name = "lblHiddenId";
+            this.lblHiddenId.Size = new System.Drawing.Size(0, 13);
+            this.lblHiddenId.TabIndex = 63;
+            // 
             // CreateVendorMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 497);
+            this.ClientSize = new System.Drawing.Size(540, 520);
+            this.Controls.Add(this.lblHiddenId);
             this.Controls.Add(this.lblTaxes);
             this.Controls.Add(this.txtCstNo);
             this.Controls.Add(this.txtLbtNo);
@@ -347,6 +357,7 @@
             this.Controls.Add(this.lblFrameMasterHeading);
             this.Name = "CreateVendorMaster";
             this.Text = "New Vendor";
+            this.Load += new System.EventHandler(this.CreateVendorMaster_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +395,6 @@
         private System.Windows.Forms.TextBox txtLbtNo;
         private System.Windows.Forms.TextBox txtCstNo;
         private System.Windows.Forms.Label lblTaxes;
+        private System.Windows.Forms.Label lblHiddenId;
     }
 }

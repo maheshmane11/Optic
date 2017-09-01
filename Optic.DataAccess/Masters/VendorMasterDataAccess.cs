@@ -121,6 +121,38 @@ namespace Optic.DataAccess.Masters
             }
         }
 
+        public VendorMasterDTO GetVendorMasterById(int vendorMasterId)
+        {
+            using (var uoW = new UnitOfWork())
+            {
+                var opticMaster = uoW.vendorMasterRepository.GetFirstOrDefault(x => x.VendorMasterID == vendorMasterId && !x.IsDeleted);
+
+                VendorMasterDTO opticMasterDTO = new VendorMasterDTO
+                {
+                    VendorMasterID = opticMaster.VendorMasterID,
+                    VendorName = opticMaster.VendorName,
+                    OfficePhoneNumber = opticMaster.OfficePhoneNumber,
+                    PhoneNumber = opticMaster.PhoneNumber,
+                    MobileNumber=opticMaster.MobileNumber,
+                    FaxNumber=opticMaster.FaxNumber,
+                    VendorAddress=opticMaster.VendorAddress,
+                    EmailId=opticMaster.EmailId,
+                    Website=opticMaster.Website,
+                    CstNo=opticMaster.CstNo,
+                    GstNo=opticMaster.GstNo,
+                    LbtNo=opticMaster.LbtNo,
+                    VatNo=opticMaster.VatNo,
+                    OpBal = opticMaster.OpBal,
+                    IsDeleted = opticMaster.IsDeleted,                    
+                    CreatedBy = opticMaster.CreatedBy,
+                    CreatedDate = opticMaster.CreatedDate,
+                    ModifiedBy = opticMaster.ModifiedBy,
+                    ModifiedDate = opticMaster.ModifiedDate
+                };
+                return opticMasterDTO;
+            }
+        }
+
         public bool DeleteVendorMasterById(int vedorMasterId)
         {
             try

@@ -1,4 +1,5 @@
 ﻿using Optic.Business;
+using Optic.Windows.Master;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,19 +56,29 @@ namespace Optic.Windows.Display
             dataGridDisplayMaster.Columns["OfficePhoneNo"].HeaderText = "Phone No(O)";
             dataGridDisplayMaster.Columns["PhoneNo"].HeaderText = "Phone No";
             dataGridDisplayMaster.Columns["MobileNo"].HeaderText = "MobileNo";
-            if (!dataGridDisplayMaster.Columns.Contains("btnDeleteRow"))
+            if (!dataGridDisplayMaster.Columns.Contains("btnDeleteRow") && !dataGridDisplayMaster.Columns.Contains("btnEditRow"))
             {
+                var editButton = new DataGridViewButtonColumn();
+                editButton.Name = "btnEditRow";
+                editButton.HeaderText = "Edit";
+                editButton.Text = "Edit";
+                editButton.UseColumnTextForButtonValue = true;
+                dataGridDisplayMaster.Columns.Insert(dataGridDisplayMaster.ColumnCount, editButton);
+
                 var deleteButton = new DataGridViewButtonColumn();
                 deleteButton.Name = "btnDeleteRow";
                 deleteButton.HeaderText = "Delete";
                 deleteButton.Text = "Delete";
                 deleteButton.UseColumnTextForButtonValue = true;
                 dataGridDisplayMaster.Columns.Insert(dataGridDisplayMaster.ColumnCount, deleteButton);
-                //dataGridDisplayMaster.Columns.Add();
+                dataGridDisplayMaster.CellClick += new DataGridViewCellEventHandler(dataGridDisplayMaster_CellClick);
             }
             else
+            {
                 dataGridDisplayMaster.Columns["btnDeleteRow"].Visible = true;
-            dataGridDisplayMaster.CellClick += new DataGridViewCellEventHandler(dataGridDisplayMaster_CellClick);
+                dataGridDisplayMaster.Columns["btnEditRow"].Visible = true;
+            }
+
 
         }
 
@@ -79,15 +90,11 @@ namespace Optic.Windows.Display
                 DataGridViewButtonCell b = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell;
                 if (b != null)
                 {
-                    int opticMasterId = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["Id"].Value);
-                    if (manager.DeleteOpticMasterById(opticMasterId))
-                    {                        
-                        FillMasterGrid();
-                    }
+                    int vendorMasterId = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells["Id"].Value);
+                    if (b.Value.ToString().Equals("Delete"))
+                        DeleteVendorMaster(vendorMasterId);
                     else
-                    {
-                        MessageBox.Show("Problem while deleting the record. Try again!");
-                    }
+                        EditVendorMaster(vendorMasterId);
 
                 }
             }
@@ -109,6 +116,25 @@ namespace Optic.Windows.Display
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DeleteVendorMaster(int opticMasterId)
+        {
+            if (manager.DeleteVendorMasterById(opticMasterId))
+            {
+                FillMasterGrid();
+            }
+            else
+            {
+                MessageBox.Show("Problem while deleting the record. Try again!");
+            }
+        }
+
+        private void EditVendorMaster(int opticMasterId)
+        {
+            var vendorMaster = manager.GetVendorMasterById(opticMasterId);
+            var form = new CreateVendorMaster(vendorMaster);
+            form.ShowDialog();
         }
     }
 }
