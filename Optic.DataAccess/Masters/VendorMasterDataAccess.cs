@@ -87,5 +87,58 @@ namespace Optic.DataAccess.Masters
             }
             return count > 0 ? true : false;
         }
+
+        public List<DisplayVendorMasterDTO> GetVendorMasterList(string searchText)
+        {
+            try
+            {
+                List<DisplayVendorMasterDTO> vendorMasterList = new List<DisplayVendorMasterDTO>();
+                using (var uoW = new UnitOfWork())
+                {
+                    var masterList = new List<VendorMaster>();
+                    if (string.IsNullOrEmpty(searchText))
+                        masterList = uoW.vendorMasterRepository.Get(x=>!x.IsDeleted).ToList();
+                    else
+                        masterList = uoW.vendorMasterRepository.Get(x => x.VendorName.Contains(searchText) && !x.IsDeleted).ToList();
+                    
+                    vendorMasterList =
+                            masterList.Select(item => new DisplayVendorMasterDTO
+                            {
+                                VendorMasterID = item.VendorMasterID,
+                                VendorName= item.VendorName,
+                                VendorAddress = item.VendorAddress,
+                                OfficePhoneNumber = item.OfficePhoneNumber,
+                                PhoneNumber = item.PhoneNumber,
+                                MobileNumber=item.MobileNumber,
+                                FaxNumber = item.FaxNumber
+                            }).ToList();                    
+                }
+                return vendorMasterList;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool DeleteVendorMasterById(int vedorMasterId)
+        {
+            try
+            {
+                using (var uoW = new UnitOfWork())
+                {
+                    var vendorMaster = uoW.vendorMasterRepository.GetById(vedorMasterId);
+                    vendorMaster.IsDeleted = true;
+                    vendorMaster.ModifiedBy = 1;
+                    vendorMaster.ModifiedDate = DateTime.Now;
+                    uoW.vendorMasterRepository.Update(vendorMaster);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

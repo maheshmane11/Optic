@@ -38,5 +38,15 @@ namespace Optic.Business
         {
             return vendorMasterDataAccess.CheckVendorExists(name, mobileNO);
         }
+
+        public List<DisplayVendorMasterDTO> GetMasterList(string searchText)
+        {
+            return vendorMasterDataAccess.GetVendorMasterList(searchText);
+        }
+
+        public bool DeleteOpticMasterById(int vendorMasterId)
+        {
+            return vendorMasterDataAccess.DeleteVendorMasterById(vendorMasterId);
+        }
     }
 }

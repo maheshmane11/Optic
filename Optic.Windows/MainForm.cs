@@ -92,5 +92,11 @@ namespace Optic.Windows
             var form = new OpticMasterDisplay(this);
             form.ShowDialog();
         }
+
+        private void menuDisplayVendorMaster_Click(object sender, EventArgs e)
+        {
+            var form = new VendorMasterDisplay(this);
+            form.ShowDialog();
+        }
     }
 }

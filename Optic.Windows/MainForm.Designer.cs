@@ -168,6 +168,7 @@
             this.menuDisplayVendorMaster.Name = "menuDisplayVendorMaster";
             this.menuDisplayVendorMaster.Size = new System.Drawing.Size(155, 22);
             this.menuDisplayVendorMaster.Text = "Vendor Master";
+            this.menuDisplayVendorMaster.Click += new System.EventHandler(this.menuDisplayVendorMaster_Click);
             // 
             // menuDisplayexpanseMaster
             // 
